@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<title>Hello Mr. Dijkstra</title>
+<meta charset="utf-8" />
+<head>
+</head>
+<body>
+<script type='text/javascript' src='/create_graph.js'></script>
+<script type='text/javascript' src='/visualise.js'></script>
+<br><b><i>Say Hello  Algorithms !</i></b></br>
+<table>
+	<tr><td>
+<textarea id=json_area></textarea></td></tr>
+<tr><td>
+		<button type="button" onclick="accept_json()">load json</button>
+		</td></tr>
+	<tr><td><input type='text' id='cnt' > </td>
+</tr><tr><td>
+<button type="button" onclick="mn()">Generate Nodes</button>
+</td></tr>
+<tr><td>
+<button type="button" onclick="visualise_traversal()">visualise graph</button>
+	</td></tr>
+
+</table>
+<canvas id="canvasInAPerfectWorld" width="1000" height="550" style="border:2px solid #000000; margin-left:30px"></canvas>
+<br><br>
+</body>
+</html>

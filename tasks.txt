@@ -1,0 +1,13 @@
+// implementing BFS 
+// STDIN,STDOUT CODE
+// GET POST type request handling through this server  In Progress
+// Arrow creation for node directing
+// UI/UX 
+// Graph class to hold all nodes
+// Graph class should also have visualisable_nodes.
+// a clear canvas method.
+// a clear_line/ connection method
+// all nodes should have a visualisable_connections list apart from a connection list
+// Graph class with a draw_node(node) method.
+// create a class display graph i.e the graph which is currently in display
+
