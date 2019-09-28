@@ -1,5 +1,5 @@
 var node_count=0;
-var start_node;
+var start_node; 
 var target_node;
 var json_nodes=[];
 var nodes=[];
@@ -14,7 +14,6 @@ graph_canva.context.rect(0,0, graph_canva.canva.width, graph_canva.canva.height)
 graph_canva.context.fillStyle = "#8A2BE2";
 graph_canva.context.fill();
 }
-
 function accept_json()
 {
 var obj=JSON.parse(document.getElementById('json_area').value);
@@ -26,7 +25,6 @@ json_nodes=obj.nodes;
 draw_graph_from_json();
 visualise_connections();
 }
-
 function get_node_by_id(node_id)
 {
 for(i=0;i<node_count;i++){
@@ -48,8 +46,6 @@ graph_canva.context.rect(0,0, graph_canva.canva.width, graph_canva.canva.height)
 //graph_canva.context.fillStyle = "gray";
 graph_canva.context.fillStyle = "#8A2BE2";
 graph_canva.context.fill();
-
-
 j=0;
 while(j<node_count)
 {
@@ -264,6 +260,7 @@ this.canva.style.position = "absolute";
 
 var graph_canva;
 window.onload=function() {
+document.getElementById('json_area').value='{"count":"2",\n"start":"1",\n"end":"2",\n"nodes":[\n{"id":"1",\n"connections":[2]},\n{"id":"2",\n"connections":[1]\n}]\n}';
 alert("loaded");
 graph_canva=draw_canvas();
 }
