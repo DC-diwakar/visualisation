@@ -1,14 +1,15 @@
 
-function connect_local_nodes(node1,node2,w,line_colour)
+function connect_local_nodes(node1,node2,lineWidth,line_colour)
 {
   graph_canva.context.beginPath();
   graph_canva.context.moveTo(node1.x,node1.y);
-// End point (180,47)
+//End point (180,47)
  graph_canva.context.strokeStyle=line_colour;
- graph_canva.context.lineWidth=w;
+ graph_canva.context.lineWidth=lineWidth;
  graph_canva.context.lineTo(node2.x,node2.y);
-if(node2.x>node1.x){  i=15; }
-else {  i=-15 }
+if(node2.x>node1.x){ i=15; }
+else {  i=-15; }
+
   graph_canva.context.moveTo(node2.x,node2.y);
   graph_canva.context.lineTo(node2.x-i,node2.y-15);
   graph_canva.context.moveTo(node2.x,node2.y);
@@ -16,11 +17,9 @@ else {  i=-15 }
 
 // End point (180,47)
 graph_canva.context.strokeStyle=line_colour;
-graph_canva.context.lineWidth=w;
+graph_canva.context.lineWidth=lineWidth;
 
-
-
- graph_canva.context.stroke();
+graph_canva.context.stroke();
 // for(i=0;i<node_count;i++){
 // 	 if(node_id==nodes[i].id)
 // 	 {
@@ -36,7 +35,9 @@ function my_sleep()
 { 
   me=this;
   me.stop="";
-  me.result=[3,10,8,4,7];
+  me.result=demo_path;
+  console.log(demo_path);
+  console.log("path above");
   me.index=0;
   me.previous_node=get_node_by_id(me.result[0]); 
   me.previous_node.create_node(); 
@@ -53,11 +54,14 @@ function my_sleep()
   //   });  
   // }
 
-   me.previous_node.connections.forEach(i=> {
-    n=get_node_by_id(i)
-    n.create_node();
-    if(n!=current_node) { connect_nodes(me.previous_node,n,2,'pink') } 
-  });  
+
+  // commented for now
+  //  me.previous_node.connections.forEach(i=> {
+  //   n=get_node_by_id(i)
+  //   n.create_node();
+  //   if(n!=current_node) { connect_nodes(me.previous_node,n,2,'pink') } 
+  // });
+
   current_node.create_node();
   connect_local_nodes(me.previous_node,current_node,3,'green');
   me.previous_most=me.previous_node;
@@ -74,9 +78,18 @@ function my_sleep()
 }
 function visualise_traversal()
 {
-  clear_canvas()
-mm=new my_sleep()
+  clear_canvas();
+ new Promise(function(resolve,reject){ 
+  breadth_first_search('1','2');
+  resolve();
+}).then(function()
+{
+mm=new my_sleep();
 mm.stop=setInterval(mm.init,2000);
+}).catch(function()
+{
+  alert("error");
+});
   //connect_nodes(previous_node,current_node,2,'black');
   //previous_node=current_node;  
 }
