@@ -40,6 +40,7 @@ function draw_graph_from_json()
 {
 x=50;
 y=50;
+nodes=[];
 graph_canva.canva.height=graph_canva.canva.height+Math.floor(node_count/10)*300;
 graph_canva.context.beginPath();
 graph_canva.context.rect(0,0, graph_canva.canva.width, graph_canva.canva.height);
@@ -78,6 +79,7 @@ x=50
 
 function visualise_connections()
 {
+	console.log(nodes);
 	nodes.forEach(n=> {
 		(n.connections).forEach(connection_id=>{
 			node_id=get_node_by_id(connection_id);
@@ -261,7 +263,6 @@ this.canva.style.position = "absolute";
 var graph_canva;
 window.onload=function() {
 document.getElementById('json_area').value='{"count":"2",\n"start":"1",\n"end":"2",\n"nodes":[\n{"id":"1",\n"connections":[2]},\n{"id":"2",\n"connections":[1]\n}]\n}';
-alert("loaded");
 graph_canva=draw_canvas();
 }
 /*context.beginPath();
