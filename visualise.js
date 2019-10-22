@@ -80,7 +80,7 @@ function visualise_traversal()
 {
   clear_canvas();
  new Promise(function(resolve,reject){ 
-  breadth_first_search('1','2');
+  breadth_first_search(start_node,target_node);
   resolve();
 }).then(function()
 {

@@ -262,7 +262,7 @@ this.canva.style.position = "absolute";
 
 var graph_canva;
 window.onload=function() {
-document.getElementById('json_area').value='{"count":"2",\n"start":"1",\n"end":"2",\n"nodes":[\n{"id":"1",\n"connections":[2]},\n{"id":"2",\n"connections":[1]\n}]\n}';
+document.getElementById('json_area').value='{"count":"20","start":"3","end":"7","nodes":[{"id":"1","connections":[8,9]},{"id":"2","connections":[6,5,19]},{"id":"3","connections":[10,1,20]},{"id":"4","connections":[7,3]},{"id":"5","connections":[1,17,2]},{"id":"6","connections":[10,9]},{"id":"7","connections":[13,8,10]},{"id":"8","connections":[3,4,20]},{"id":"9","connections":[1,5]},{"id":"10","connections":[8,2]},{"id":"11","connections":[18,9]},{"id":"12","connections":[16,17,10]},{"id":"13","connections":[10,1,2]},{"id":"14","connections":[12,5,15]},{"id":"15","connections":[19,2]},{"id":"16","connections":[18,13,9]},{"id":"17","connections":[4,10,20]},{"id":"18","connections":[7,17,7]},{"id":"19","connections":[12,5]},{"id":"20","connections":[11,3,9]}]}';
 graph_canva=draw_canvas();
 }
 /*context.beginPath();
