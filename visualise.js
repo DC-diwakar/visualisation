@@ -42,7 +42,7 @@ function my_sleep()
   me.previous_node=get_node_by_id(me.result[0]); 
   me.previous_node.create_node(); 
   me.previous_most=null;
-  this.init=function()
+  this.init=function()  
   {
   me.index=me.index+1;
   current_node=get_node_by_id(me.result[me.index]);
@@ -78,6 +78,7 @@ function my_sleep()
 }
 function visualise_traversal()
 {
+  accept_json();
   clear_canvas();
  new Promise(function(resolve,reject){ 
   breadth_first_search(start_node,target_node);

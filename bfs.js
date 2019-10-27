@@ -2,7 +2,6 @@ demo_path=[];
 function breadth_first_search(start_id,end_id)
 {
 demo_path=[];
-alert(end_id);
 start=get_node_by_id(start_id);
 node_queue=[];
 node_queue.push(start);
